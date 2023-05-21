@@ -13,7 +13,7 @@ userRouter.get(
           const user = new User({
             name: 'admin',
             email: 'admin@example.com',
-            password: 'jsamazona',
+            password: 'nové_heslo', /* jsamazona */
             isAdmin: true,
           });
 
