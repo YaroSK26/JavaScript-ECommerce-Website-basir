@@ -33,7 +33,7 @@ app.get('/api/products', (_req, res) => {
 app.get('/api/products/:id', (req, res) => {
   const product = data.products.find((x) => x._id === req.params.id);
   if (product) {
-    res.send(product);
+    res.send(product); 
   } else {
     res.status(404).send({ message: 'Product Not Found!' });
   }
@@ -45,3 +45,4 @@ app.use((err, _req, res, next) => {
 app.listen(5000, () => {
   console.log('serve at http://localhost:5000');
 });
+/* blbost */ 
