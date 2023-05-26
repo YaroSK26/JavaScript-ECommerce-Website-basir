@@ -7,13 +7,15 @@ const PaymentScreen = {
       .getElementById('payment-form')
       .addEventListener('submit', async (e) => {
         e.preventDefault();
-        const paymentMethod = document.querySelector("input[name='payment-method']:checked").value
+        const paymentMethod = document.querySelector(
+          'input[name="payment-method"]:checked'
+        ).value;
         setPayment({ paymentMethod });
         document.location.hash = '/placeorder';
       });
   },
   render: () => {
-    const { name } = getUserInfo(); 
+    const { name } = getUserInfo();
     if (!name) {
       document.location.hash = '/';
     }
@@ -55,4 +57,3 @@ const PaymentScreen = {
   },
 };
 export default PaymentScreen;
-

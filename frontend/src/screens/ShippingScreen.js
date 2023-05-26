@@ -1,31 +1,29 @@
-import { getUserInfo,  getShipping, setShipping } from '../localStorage';
-import CheckoutSteps from "../components/CheckoutSteps"
+import { getUserInfo, getShipping, setShipping } from '../localStorage';
+import CheckoutSteps from '../components/CheckoutSteps';
 
 const ShippingScreen = {
   after_render: () => {
     document
       .getElementById('shipping-form')
       .addEventListener('submit', async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         setShipping({
-          adress: document.getElementById("adress").value,
-          city: document.getElementById("city").value,
-          postalCode: document.getElementById("postalCode").value,
-          country: document.getElementById("country").value,
-        })
-        document.location.hash = "/payment"
+          address: document.getElementById('address').value,
+          city: document.getElementById('city').value,
+          postalCode: document.getElementById('postalCode').value,
+          country: document.getElementById('country').value,
+        });
+        document.location.hash = '/payment';
       });
   },
   render: () => {
-    const { name} = getUserInfo();
+    const { name } = getUserInfo();
     if (!name) {
       document.location.hash = '/';
     }
-    const { adress,city,postalCode,country} = getShipping()
-
+    const { address, city, postalCode, country } = getShipping();
     return `
-
-    ${CheckoutSteps.render({step1:true, step2: true})}
+    ${CheckoutSteps.render({ step1: true, step2: true })}
     <div class="form-container">
       <form id="shipping-form">
         <ul class="form-items">
@@ -33,25 +31,25 @@ const ShippingScreen = {
             <h1>Shipping</h1>
           </li>
           <li>
-            <label for="adress">Adress</label>
-            <input type="text" name="adress" id="adress" value="${adress}" />
+            <label for="address">Adress</label>
+            <input type="text" name="address" id="address" value="${address}" />
           </li>
-           <li>
+          <li>
             <label for="city">City</label>
             <input type="text" name="city" id="city" value="${city}" />
           </li>
-           <li>
-            <label for="postalCode">Postal Code </label>
+          <li>
+            <label for="postalCode">Postal Code</label>
             <input type="text" name="postalCode" id="postalCode" value="${postalCode}" />
           </li>
-            <li>
+          <li>
             <label for="country">Country</label>
             <input type="text" name="country" id="country" value="${country}" />
           </li>
-     
+
           <li>
             <button type="submit" class="primary">Continue</button>
-          </li>
+          </li>        
         </ul>
       </form>
     </div>
