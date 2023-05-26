@@ -40,12 +40,7 @@ const ProductScreen = {
             <li>
               Price: <strong>$${product.price}</strong>
             </li>
-            <li>
-              Description:
-              <div>
-                ${product.description}
-              </div>
-            </li>
+            
           </ul>
         </div>
         <div class="details-action">
