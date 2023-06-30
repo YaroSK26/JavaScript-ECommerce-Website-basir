@@ -102,13 +102,15 @@ header{
 header a{
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    padding-right: 0.5rem;
 }
 
 
 
 .brand a {
     font-size: 3rem;
+    font-weight: bold;
+    padding-left: 1rem;
 }
 
 footer{
@@ -437,4 +439,44 @@ tbody > tr:nth-child(odd){
 
 td {
     padding: 0.5rem;
+}
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.dashboard h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+.dashboard-menu {
+    width: 10%;
+    background-color: #f0f0f0;
+    margin-right: 1rem;
+}
+
+.dashboard-menu ul {
+    padding: 0;
+}
+
+.dashboard-menu a {
+    display: flex;
+    padding: 1rem;
+    padding-left: 2rem;
+    justify-content: space-between;
+}
+
+.dashboard-menu a:hover {
+    background-color: #c0c0c0;
+}
+
+.dashboard-menu li.selected a {
+    background-color: #c0c0c0;
+    color: #f08040;
+}
+
+.dashboard-content {
+    padding: 1rem;
 }
